@@ -2,19 +2,19 @@
 
 # amlnn-model-zoo
 
-# Introduction
+# 简介
 
-​		**amlnn-model-zoo** is developed based on the **amlnn toolkit**, completing **model conversion** and **deployment** to implement a model zoo for mainstream and commonly used algorithms. The demo package provides complete model conversion scripts, as well as a complete workflow for using the **Python API**, **OpenAI API**, and **C API** to perform inference and run the converted model.
+​		amlnn-model-zoo是基于amlnn toolkit完成模型转换与部署，实现主流常用算法的model zoo。demo包中提供完整的模型转换脚本，以及使用 Python API，OpenAI API 和 C API 对转换后的模型进行推理运行的完整流程。
 
-**Objective:** To help users quickly get started and deploy algorithm models on the Amlogic NPU platform. The rich algorithm library in the model zoo can better guide customers in the deployment of AI products.
+**目的：** 帮助用户快速上手，完成算法模型在 Amlogic NPU平台上的部署。model zoo中丰富的算法库可以更好的指导客户AI产品落地。
 
 
 
-## Dependencies
+# 依赖项
 
-- ​	
+- 
 
-# Support List
+# 支持列表
 
 | Category               | Model_name                                                   | Dtype  | Model Link           | Platform      |
 | ---------------------- | ------------------------------------------------------------ | ------ | -------------------- | ------------- |
@@ -29,7 +29,7 @@
 | Pose Estimation        | blazepose_detect                                             | INT8   | Link to server(TODO) | A311D2/S905X5 |
 | Pose Estimation        | blazepose_landmark                                           | INT8   | Link to server(TODO) | A311D2/S905X5 |
 | Voiceprint recognition | [ECAPA-TDNN](https://github.com/TaoRuijie/ECAPA-TDNN)        | Hybrid | Link to server(TODO) | A311D2/S905X5 |
-| Speech Recognition     | whisper                                                      | Hybrid | Link to server(TODO) | A311D2/S905X5 |
+| Speech Recognition     | [whisper](https://github.com/openai/whisper)                 | Hybrid | Link to server(TODO) | A311D2/S905X5 |
 | Image-Text Matching    | [clip](https://huggingface.co/openai/clip-vit-base-patch32)  | Hybrid | Link to server(TODO) | A311D2/S905X5 |
 | Chat LLM               | deepseek                                                     | Hybrid | Link to server(TODO) | A311D2/S905X5 |
 
@@ -54,9 +54,9 @@
 
 
 
-# Examples Compile
+# Examples 编译
 
-TODO
+
 
 
 
