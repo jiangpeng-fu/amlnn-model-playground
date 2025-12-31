@@ -1,10 +1,10 @@
 [简体中文](README_CN.md) | [English](README.md)
 
-# amlnn-model-zoo
+# amlnn-model-playground
 
 # 简介
 
-​		amlnn-model-zoo是基于amlnn toolkit完成模型转换与部署，实现主流常用算法的model zoo。demo包中提供完整的模型转换脚本，以及使用 Python API，OpenAI API 和 C API 对转换后的模型进行推理运行的完整流程。
+​		amlnn-model-playground是基于amlnn toolkit完成模型转换与部署，实现主流常用算法的model zoo。demo包中提供完整的模型转换脚本，以及使用 Python API，OpenAI API 和 C API 对转换后的模型进行推理运行的完整流程。
 
 **目的：** 帮助用户快速上手，完成算法模型在 Amlogic NPU平台上的部署。model zoo中丰富的算法库可以更好的指导客户AI产品落地。
 

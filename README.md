@@ -1,10 +1,10 @@
 [简体中文](README_CN.md) | [English](README.md)
 
-# amlnn-model-zoo
+# amlnn-model-playground
 
 # Introduction
 
-​		**amlnn-model-zoo** is developed based on the **amlnn toolkit**, completing **model conversion** and **deployment** to implement a model zoo for mainstream and commonly used algorithms. The demo package provides complete model conversion scripts, as well as a complete workflow for using the **Python API**, **OpenAI API**, and **C API** to perform inference and run the converted model.
+​		**amlnn-model-playground** is developed based on the **amlnn toolkit**, completing **model conversion** and **deployment** to implement a model zoo for mainstream and commonly used algorithms. The demo package provides complete model conversion scripts, as well as a complete workflow for using the **Python API**, **OpenAI API**, and **C API** to perform inference and run the converted model.
 
 **Objective:** To help users quickly get started and deploy algorithm models on the Amlogic NPU platform. The rich algorithm library in the model zoo can better guide customers in the deployment of AI products.
 
