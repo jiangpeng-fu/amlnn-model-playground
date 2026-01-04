@@ -4,18 +4,18 @@ project(mobilenet_v2_demo)
 set(CMAKE_CXX_STANDARD 17)
 
 # Set NNSDK path
-set(NNSDK_ROOT "${CMAKE_SOURCE_DIR}/../../../dependency/nnsdk_v2.8.5")
+set(NNSDK_ROOT "${CMAKE_SOURCE_DIR}/../../../../dependency/nnsdk")
 include_directories(${NNSDK_ROOT}/include)
-include_directories(${CMAKE_SOURCE_DIR}/../../../common)
+include_directories(${CMAKE_SOURCE_DIR}/../../../../common)
 
 # Set dependency path
-set(3RDPARTY_DIR "${CMAKE_SOURCE_DIR}/../../../dependency")
+set(3RDPARTY_DIR "${CMAKE_SOURCE_DIR}/../../../../dependency")
 
 if(CMAKE_SYSTEM_NAME STREQUAL "Android")
     if (ANDROID_ABI STREQUAL "arm64-v8a")
-        link_directories(${NNSDK_ROOT}/lib/android/lib64)
+        link_directories(${NNSDK_ROOT}/lib/android/arm64-v8a)
     else()
-        link_directories(${NNSDK_ROOT}/lib/android/lib32)
+        link_directories(${NNSDK_ROOT}/lib/android/armeabi-v7a)
     endif()
     # Android needs log
     link_libraries(log)
@@ -29,8 +29,8 @@ find_package(OpenCV REQUIRED)
 include_directories(${OpenCV_INCLUDE_DIRS})
 
 add_executable(mobilenet_v2_demo
-    src/main.cpp
-    ${CMAKE_SOURCE_DIR}/../../../common/model_loader.cpp
+    main.cpp
+    ${CMAKE_SOURCE_DIR}/../../../../common/model_loader.cpp
 )
 
 target_link_libraries(mobilenet_v2_demo
