@@ -35,7 +35,8 @@ int main(int argc, char** argv) {
         if (img.empty()) continue;
 
         std::cout << "============================================================" << std::endl;
-        std::cout << "Processing: " << it.path().filename() << std::endl;
+        std::cout << "Processing image: \"" << it.path().filename().string() << "\"" << std::endl;
+        std::cout << "============================================================" << std::endl;
 
         float scale = std::min((float)kInputW / img.cols, (float)kInputH / img.rows);
         int nw = img.cols * scale, nh = img.rows * scale;
@@ -86,12 +87,25 @@ int main(int argc, char** argv) {
         }
 
         std::vector<int> indices = manual_nms(bboxes, confs, 0.45f);
-        for (int idx : indices) {
-            cv::rectangle(img, bboxes[idx], {0, 255, 0}, 2);
-            char text[256]; std::sprintf(text, "%s %.2f", kClassNames[class_ids[idx]].c_str(), confs[idx]);
-            cv::putText(img, text, {bboxes[idx].x, bboxes[idx].y - 5}, cv::FONT_HERSHEY_SIMPLEX, 0.5, {0, 255, 0}, 1);
+        if (!indices.empty()) {
+            std::cout << "Detected " << indices.size() << " objects:" << std::endl;
+            for (size_t i = 0; i < indices.size(); i++) {
+                int idx = indices[i];
+                printf("  %zu. %s (%.2f)\n", i + 1, kClassNames[class_ids[idx]].c_str(), confs[idx]);
+                
+                cv::rectangle(img, bboxes[idx], {0, 255, 0}, 2);
+                char text[256]; std::sprintf(text, "%s %.2f", kClassNames[class_ids[idx]].c_str(), confs[idx]);
+                cv::putText(img, text, {bboxes[idx].x, bboxes[idx].y - 5}, cv::FONT_HERSHEY_SIMPLEX, 0.5, {0, 255, 0}, 1);
+            }
+        } else {
+            std::cout << "No objects detected." << std::endl;
         }
-        cv::imwrite("yolo11_result/" + it.path().filename().string(), img);
+
+        std::string out_path = "yolo11_result/" + it.path().filename().string();
+        cv::imwrite(out_path, img);
+        std::cout << "Result saved to: " << out_path << std::endl;
+        std::cout << "============================================================" << std::endl << std::endl;
     }
+
     aml_module_destroy(ctx); return 0;
 }
